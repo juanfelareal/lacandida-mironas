@@ -1,0 +1,817 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Las Mironas · Club de escritura · La Cándida</title>
+<meta name="description" content="Las Mironas, el club de escritura de La Cándida. Dos sesiones virtuales y un encuentro presencial en Medellín cada mes. Suscripción de $200.000 al mes.">
+<meta property="og:title" content="Las Mironas · Club de escritura de La Cándida">
+<meta property="og:description" content="Un club de escritura para salvar, con las palabras, todo lo que amamos. 2 sesiones virtuales + 1 encuentro en Medellín al mes.">
+<meta property="og:image" content="https://juanfelareal.github.io/lacandida-mironas/img/og.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#F6EFE2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Fraunces:opsz,wght,SOFT@9..144,400..800,100&family=Montserrat:wght@400;500;600;800;900&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papel:#F6EFE2;
+  --crema:#FBF4E6;
+  --tinta:#26221E;
+  --tinta-2:#5B544C;
+  --linea:#DDD3C1;
+  --indigo:#2E3A9A;
+  --indigo-2:#232D7C;
+  --lavanda:#D6D5EE;
+  --lavanda-2:#C2C1E6;
+  --limon:#EDEA6A;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --logo:'Fraunces',Georgia,serif;
+  --sans:'Montserrat',system-ui,sans-serif;
+  --mano:'Caveat',cursive;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--papel);color:var(--tinta);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+.grano{position:relative}
+.grano::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.45 0 0 0 0 0.4 0 0 0 .18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* tipografía de marca */
+.caps{font-family:var(--serif);font-weight:500;text-transform:uppercase;letter-spacing:.32em;font-size:13px}
+.it{font-family:var(--serif);font-style:italic;font-weight:500}
+.mano{font-family:var(--mano)}
+.logo{font-family:var(--logo);font-variation-settings:"SOFT" 100;font-weight:760;line-height:.82;letter-spacing:-.01em;text-decoration:none;display:inline-block}
+.logo small{display:block;font-size:.62em}
+.logo b{font-weight:inherit;font-size:1em}
+
+/* demo */
+.demo{background:var(--tinta);color:var(--papel);font-size:12px;text-align:center;padding:7px 16px;letter-spacing:.02em}
+.demo b{color:var(--limon);font-weight:600}
+
+/* nav */
+nav{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--papel) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+nav .logo{font-size:22px}
+nav ul{display:flex;gap:28px;list-style:none}
+nav ul a{text-decoration:none;font-size:13px;font-weight:500;color:var(--tinta-2)}
+nav ul a:hover{color:var(--indigo)}
+.nav-r{display:flex;align-items:center;gap:10px}
+.cuenta{display:none;align-items:center;gap:8px;font-size:13px;font-weight:600;padding:8px 14px;border:1px solid var(--linea);border-radius:99px;background:var(--crema)}
+.cuenta i{width:8px;height:8px;border-radius:50%;background:#3DA35D}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:99px;padding:14px 26px;font-weight:600;font-size:14px;text-decoration:none;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.98)}
+.btn-i{background:var(--indigo);color:#fff}
+.btn-i:hover{background:var(--indigo-2)}
+.btn-l{background:var(--limon);color:var(--tinta)}
+.btn-o{border:1px solid currentColor}
+.btn-sm{padding:10px 18px;font-size:13px}
+
+/* hero */
+.hero{background:var(--lavanda);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:72px 0 88px}
+.hero .caps{color:var(--indigo)}
+.titulo{font-family:var(--sans);font-weight:800;color:var(--indigo);font-size:clamp(64px,10.5vw,148px);line-height:.86;letter-spacing:-.015em;margin:22px 0 6px}
+.hero .it.sub{font-size:clamp(26px,3vw,36px);color:var(--indigo)}
+.hero p.lead{font-family:var(--serif);font-size:clamp(21px,2.1vw,26px);line-height:1.35;max-width:30ch;margin:28px 0 30px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.precio-mini{font-size:13px;color:var(--tinta-2)}
+.precio-mini b{color:var(--tinta);font-size:15px}
+.cupos{margin-top:30px;display:flex;align-items:center;gap:14px;font-size:13px}
+.barra{flex:0 0 140px;height:6px;border-radius:9px;background:rgba(46,58,154,.15);overflow:hidden}
+.barra span{display:block;height:100%;background:var(--indigo);border-radius:9px;transition:width .8s}
+.collage{position:relative;height:600px}
+.collage figure{position:absolute;overflow:hidden;border-radius:2px}
+.collage img{width:100%;height:100%;object-fit:cover}
+.c1{width:62%;height:78%;right:0;top:0}
+.c2{width:46%;height:52%;left:0;bottom:0;border:10px solid var(--lavanda)}
+.collage .nota{position:absolute;z-index:2;left:2%;top:6%;font-family:var(--mano);font-size:28px;color:var(--indigo);transform:rotate(-6deg);line-height:1}
+
+/* cinta */
+.cinta{background:var(--limon);overflow:hidden;white-space:nowrap;border-block:1px solid rgba(0,0,0,.06)}
+.cinta div{display:inline-flex;gap:46px;padding:15px 0;animation:mueve 38s linear infinite}
+.cinta span{font-family:var(--serif);text-transform:uppercase;letter-spacing:.32em;font-size:13px;font-weight:600}
+@keyframes mueve{to{transform:translateX(-50%)}}
+
+section{padding:110px 0}
+.kicker{display:flex;align-items:center;gap:14px;color:var(--indigo);margin-bottom:26px}
+.kicker::before{content:"";width:34px;height:1px;background:currentColor}
+h2{font-family:var(--serif);font-weight:500;font-size:clamp(36px,4.6vw,60px);line-height:1.04;letter-spacing:-.01em}
+h2 em{font-style:italic;color:var(--indigo)}
+
+/* manifiesto */
+.manif .wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.manif blockquote{font-family:var(--serif);font-size:clamp(25px,2.6vw,34px);line-height:1.3;font-weight:400}
+.manif blockquote em{color:var(--indigo)}
+.manif .firma{margin-top:26px;display:flex;align-items:center;gap:14px}
+.manif .firma .mano{font-size:30px;color:var(--indigo)}
+.manif .firma span{font-size:13px;color:var(--tinta-2)}
+.manif figure{aspect-ratio:4/5;overflow:hidden}
+.manif figure img{width:100%;height:100%;object-fit:cover}
+.manif .txt p{margin-top:22px;color:var(--tinta-2);max-width:46ch}
+
+/* formato */
+.formato{background:var(--crema);border-block:1px solid var(--linea)}
+.f-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
+.f-head p{max-width:40ch;color:var(--tinta-2)}
+.tarjetas{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--linea);border:1px solid var(--linea)}
+.tarjeta{background:var(--crema);padding:38px 32px 34px;display:flex;flex-direction:column;min-height:400px}
+.tarjeta .num{font-family:var(--sans);font-weight:800;font-size:76px;line-height:1;color:var(--indigo)}
+.tarjeta .num small{font-size:20px;font-weight:600;margin-left:6px;letter-spacing:0}
+.tarjeta h3{font-family:var(--serif);font-weight:500;font-size:28px;line-height:1.1;margin:22px 0 12px}
+.tarjeta p{color:var(--tinta-2);font-size:14.5px}
+.tarjeta .meta{margin-top:auto;padding-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:11.5px;font-weight:600;padding:6px 11px;border-radius:99px;background:var(--papel);border:1px solid var(--linea)}
+.tarjeta.presencial{background:var(--indigo);color:#fff}
+.tarjeta.presencial .num{color:var(--limon)}
+.tarjeta.presencial p{color:rgba(255,255,255,.78)}
+.tarjeta.presencial .chip{background:transparent;border-color:rgba(255,255,255,.3)}
+
+/* calendario */
+.cal .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:72px}
+.cal .txt p{color:var(--tinta-2);margin-top:22px;max-width:40ch}
+.meses{display:flex;gap:6px;margin-bottom:20px;flex-wrap:wrap}
+.meses button{padding:9px 16px;border-radius:99px;border:1px solid var(--linea);font-size:13px;font-weight:600;background:var(--crema)}
+.meses button[aria-pressed=true]{background:var(--tinta);color:var(--papel);border-color:var(--tinta)}
+.agenda{border-top:1px solid var(--tinta)}
+.evento{display:grid;grid-template-columns:86px 1fr auto;gap:22px;align-items:center;padding:24px 0;border-bottom:1px solid var(--linea)}
+.evento .dia{text-align:center}
+.evento .dia b{display:block;font-family:var(--sans);font-weight:800;font-size:44px;line-height:1;color:var(--indigo)}
+.evento .dia span{font-family:var(--serif);text-transform:uppercase;letter-spacing:.25em;font-size:11px;font-weight:600}
+.evento h4{font-family:var(--serif);font-weight:500;font-size:23px;line-height:1.15}
+.evento p{font-size:13px;color:var(--tinta-2);margin-top:4px}
+.tag{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 10px;border-radius:4px;white-space:nowrap}
+.tag.v{background:var(--lavanda);color:var(--indigo)}
+.tag.p{background:var(--limon);color:var(--tinta)}
+
+/* incluye */
+.incluye{background:var(--indigo);color:#fff}
+.incluye .wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.incluye h2 em{color:var(--limon)}
+.incluye .kicker{color:var(--limon)}
+.lista{list-style:none;border-top:1px solid rgba(255,255,255,.25)}
+.lista li{display:grid;grid-template-columns:40px 1fr;gap:14px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.25)}
+.lista li span{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--limon)}
+.lista b{font-weight:600;display:block;margin-bottom:2px}
+.lista p{color:rgba(255,255,255,.72);font-size:14px}
+.incluye figure{margin-top:42px;aspect-ratio:16/10;overflow:hidden}
+.incluye figure img{width:100%;height:100%;object-fit:cover}
+
+/* galería */
+.galeria{padding:0}
+.galeria .fila{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.galeria img{aspect-ratio:3/4;object-fit:cover;width:100%}
+
+/* guía */
+.guia .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:center}
+.guia figure{aspect-ratio:1;overflow:hidden}
+.guia figure img{width:100%;height:100%;object-fit:cover}
+.guia p{color:var(--tinta-2);margin-top:20px;max-width:48ch}
+.servicios{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+
+/* precio */
+.precio{background:var(--lavanda)}
+.precio .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.plan{background:var(--crema);border:1px solid var(--lavanda-2);padding:44px 40px;position:relative}
+.plan .sello{position:absolute;top:-16px;right:28px;background:var(--limon);font-family:var(--serif);text-transform:uppercase;letter-spacing:.26em;font-size:11px;font-weight:700;padding:8px 14px}
+.plan .monto{display:flex;align-items:baseline;gap:8px;margin:18px 0 4px}
+.plan .monto b{font-family:var(--sans);font-weight:800;font-size:clamp(52px,6vw,72px);line-height:1;color:var(--indigo);letter-spacing:-.02em}
+.plan .monto span{font-size:15px;color:var(--tinta-2)}
+.plan .nota{font-size:13px;color:var(--tinta-2)}
+.plan ul{list-style:none;margin:28px 0 32px;border-top:1px solid var(--linea)}
+.plan li{padding:12px 0 12px 28px;border-bottom:1px solid var(--linea);position:relative;font-size:14.5px}
+.plan li::before{content:"";position:absolute;left:4px;top:19px;width:10px;height:10px;border-radius:50%;background:var(--indigo)}
+.plan .btn{width:100%}
+.plan .seguro{display:flex;justify-content:center;gap:16px;margin-top:16px;font-size:12px;color:var(--tinta-2);flex-wrap:wrap}
+.precio .txt p{color:var(--tinta-2);margin-top:20px;max-width:42ch}
+.precio .txt .mano{font-size:30px;color:var(--indigo);margin-top:26px;display:block;transform:rotate(-3deg);transform-origin:left}
+
+/* faq */
+.faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px}
+details{border-bottom:1px solid var(--linea)}
+details:first-of-type{border-top:1px solid var(--tinta)}
+summary{list-style:none;cursor:pointer;padding:22px 40px 22px 0;font-family:var(--serif);font-size:22px;font-weight:500;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:18px;font-family:var(--sans);font-weight:400;font-size:24px;color:var(--indigo);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 40px 24px 0;color:var(--tinta-2)}
+
+/* cierre */
+.cierre{background:var(--tinta);color:var(--papel);text-align:center;padding:120px 0}
+.cierre .titulo{color:var(--papel);font-size:clamp(52px,9vw,120px)}
+.cierre .it{font-size:clamp(22px,2.6vw,30px);color:var(--limon)}
+.cierre p{max-width:44ch;margin:26px auto 34px;font-family:var(--serif);font-size:22px;line-height:1.4;opacity:.85}
+footer{background:var(--tinta);color:rgba(246,239,226,.6);border-top:1px solid rgba(246,239,226,.12);padding:34px 0;font-size:12.5px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer .logo{font-size:20px;color:var(--papel)}
+footer a{text-decoration:none}
+footer a:hover{color:var(--limon)}
+
+/* barra fija móvil */
+.fija{position:fixed;left:12px;right:12px;bottom:12px;z-index:45;display:none;align-items:center;justify-content:space-between;gap:12px;background:var(--tinta);color:var(--papel);border-radius:99px;padding:8px 8px 8px 22px;transform:translateY(140%);transition:transform .3s}
+.fija.on{transform:none}
+.fija b{font-size:15px}
+.fija small{display:block;font-size:11px;opacity:.7;line-height:1}
+
+/* checkout */
+.modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(38,34,30,.55);backdrop-filter:blur(4px)}
+.modal.on{display:flex}
+.caja{background:var(--crema);width:min(920px,100%);max-height:calc(100dvh - 32px);overflow:auto;display:grid;grid-template-columns:.85fr 1.15fr;animation:sube .3s ease}
+@keyframes sube{from{transform:translateY(14px);opacity:0}}
+.resumen{background:var(--indigo);color:#fff;padding:36px 32px;display:flex;flex-direction:column}
+.resumen .titulo{color:#fff;font-size:46px;margin:14px 0 2px}
+.resumen .it{color:var(--limon);font-size:22px}
+.resumen dl{margin-top:30px;border-top:1px solid rgba(255,255,255,.25);font-size:13.5px}
+.resumen dl div{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.25)}
+.resumen dt{opacity:.75}
+.resumen .total{margin-top:auto;padding-top:26px}
+.resumen .total b{font-family:var(--sans);font-weight:800;font-size:38px;display:block;line-height:1.1}
+.resumen .total span{font-size:12.5px;opacity:.75}
+.form{padding:36px 36px 30px;position:relative}
+.cerrar{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;font-size:22px;line-height:1;color:var(--tinta-2)}
+.cerrar:hover{background:var(--papel)}
+.pasos{display:flex;gap:8px;margin-bottom:26px;font-size:12px;font-weight:600;color:var(--tinta-2)}
+.pasos span{display:flex;align-items:center;gap:7px}
+.pasos span i{width:22px;height:22px;border-radius:50%;border:1px solid var(--linea);display:grid;place-items:center;font-style:normal;font-size:11px}
+.pasos span.on{color:var(--tinta)}
+.pasos span.on i{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+.pasos span.ok i{background:var(--limon);border-color:var(--limon);color:var(--tinta)}
+.pasos .sep{flex:1;height:1px;background:var(--linea);align-self:center}
+.form h3{font-family:var(--serif);font-weight:500;font-size:30px;line-height:1.1;margin-bottom:6px}
+.form .sub{font-size:13.5px;color:var(--tinta-2);margin-bottom:22px}
+.campo{margin-bottom:14px}
+.campo label{display:block;font-size:12px;font-weight:600;margin-bottom:6px}
+.campo input,.campo select{width:100%;font:inherit;font-size:15px;padding:13px 14px;border:1px solid var(--linea);background:#fff;border-radius:6px;color:var(--tinta);outline:none}
+.campo input:focus,.campo select:focus{border-color:var(--indigo);box-shadow:0 0 0 3px rgba(46,58,154,.12)}
+.campo.err input{border-color:#C0392B}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.metodos{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:18px}
+.metodos button{border:1px solid var(--linea);background:#fff;border-radius:6px;padding:12px 8px;font-size:12.5px;font-weight:600}
+.metodos button[aria-pressed=true]{border-color:var(--indigo);box-shadow:0 0 0 2px var(--indigo) inset;color:var(--indigo)}
+.check{display:flex;gap:10px;font-size:12.5px;color:var(--tinta-2);margin:6px 0 20px;align-items:flex-start}
+.check input{margin-top:3px;accent-color:var(--indigo)}
+.form .btn{width:100%}
+.aviso{font-size:11.5px;color:var(--tinta-2);text-align:center;margin-top:12px}
+.paso{display:none}
+.paso.on{display:block}
+.cargando{text-align:center;padding:60px 0}
+.spin{width:44px;height:44px;border:3px solid var(--lavanda);border-top-color:var(--indigo);border-radius:50%;margin:0 auto 22px;animation:gira .8s linear infinite}
+@keyframes gira{to{transform:rotate(360deg)}}
+.listo{text-align:left}
+.listo .mano{font-size:34px;color:var(--indigo);line-height:1}
+.listo .box{border:1px solid var(--linea);background:#fff;border-radius:6px;padding:4px 18px;margin:20px 0}
+.listo .box div{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--linea);font-size:13.5px}
+.listo .box div:last-child{border:0}
+.listo .box span{color:var(--tinta-2)}
+.listo .acciones{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.listo .acciones .btn{width:auto;padding:12px 10px;font-size:13px}
+
+/* panel suscripción */
+.panel .caja{grid-template-columns:1fr;width:min(560px,100%)}
+.panel .form{padding:36px}
+.estado{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;padding:6px 12px;border-radius:99px;background:#E3F2E7;color:#23733C}
+.estado.pausa{background:#FBF0C9;color:#7A5B00}
+.estado.cancel{background:#F6DEDA;color:#8E2B1E}
+.estado i{width:7px;height:7px;border-radius:50%;background:currentColor}
+.cobros{margin-top:20px;font-size:13px}
+.cobros div{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--linea)}
+.cobros div span:last-child{color:#23733C;font-weight:600}
+
+.toast{position:fixed;left:50%;bottom:24px;z-index:120;transform:translate(-50%,150%);background:var(--tinta);color:var(--papel);padding:13px 20px;border-radius:99px;font-size:13.5px;transition:transform .3s;max-width:calc(100% - 32px);text-align:center}
+.toast.on{transform:translate(-50%,0)}
+
+.rev{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease}
+.rev.in{opacity:1;transform:none}
+
+@media (max-width:900px){
+  nav ul{display:none}
+  section{padding:76px 0}
+  .hero .wrap,.manif .wrap,.cal .wrap,.incluye .wrap,.guia .wrap,.precio .wrap,.faq .wrap{grid-template-columns:1fr;gap:44px}
+  .hero .wrap{padding:44px 0 60px}
+  .collage{height:440px}
+  .tarjetas{grid-template-columns:1fr}
+  .tarjeta{min-height:0}
+  .f-head{flex-direction:column;align-items:start;gap:16px}
+  .galeria .fila{grid-template-columns:repeat(3,1fr)}
+  .galeria .fila img:nth-child(n+4){display:none}
+  .caja{grid-template-columns:1fr}
+  .resumen{padding:26px 22px}
+  .resumen .titulo{font-size:36px}
+  .resumen dl,.resumen .total{display:none}
+  .form{padding:28px 20px 24px}
+  .fija{display:flex}
+  .plan{padding:38px 22px}
+  .nav-r .btn{display:none}
+  .cuenta.on + .btn{display:none}
+}
+@media (max-width:520px){
+  .evento{grid-template-columns:62px 1fr;gap:14px}
+  .evento .tag{grid-column:2;justify-self:start}
+  .evento .dia b{font-size:36px}
+  .collage{height:380px}
+  .collage .nota{font-size:22px}
+  .listo .acciones{grid-template-columns:1fr}
+  .pasos b{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div class="demo">Vista de demostración · <b>los pagos se simulan</b>, no se realiza ningún cobro real</div>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="logo" aria-label="La Cándida">la <b>cāndida</b></a>
+    <ul>
+      <li><a href="#club">El club</a></li>
+      <li><a href="#formato">Cómo funciona</a></li>
+      <li><a href="#calendario">Calendario</a></li>
+      <li><a href="#precio">Suscripción</a></li>
+      <li><a href="#faq">Preguntas</a></li>
+    </ul>
+    <div class="nav-r">
+      <button class="cuenta" id="btnCuenta"><i></i>Mi suscripción</button>
+      <button class="btn btn-i btn-sm" data-abrir>Quiero ser Mirona</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero grano">
+  <div class="wrap">
+    <div>
+      <div class="caps">Club de escritura · La Cándida</div>
+      <h1 class="titulo">LAS<br>MIRONAS</h1>
+      <div class="it sub">Club de escritura</div>
+      <p class="lead">Un club para salvar, con las palabras, todo lo que amamos. Para mirar mejor, escribir lento y no licuar nunca las tripas.</p>
+      <div class="hero-cta">
+        <button class="btn btn-i" data-abrir>Suscribirme por $200.000 al mes</button>
+        <span class="precio-mini">Cancelas <b>cuando quieras</b></span>
+      </div>
+      <div class="cupos">
+        <div class="barra"><span id="barraCupos" style="width:0"></span></div>
+        <span id="txtCupos"><b>Quedan 4 cupos</b> para el ciclo de noviembre</span>
+      </div>
+    </div>
+    <div class="collage">
+      <figure class="c1"><img src="img/mano.jpg" alt="Una Mirona escribe a mano en su cuaderno durante una sesión del club" fetchpriority="high"></figure>
+      <figure class="c2"><img src="img/cuaderno.jpg" alt="Cuaderno abierto con la palabra Mironas escrita a mano junto a una vela"></figure>
+      <span class="nota">mirar mejor,<br>escribir lento</span>
+    </div>
+  </div>
+</header>
+
+<div class="cinta" aria-hidden="true">
+  <div>
+    <span>Escribir es mirar mejor</span><span>✦</span><span>2 sesiones virtuales al mes</span><span>✦</span><span>1 encuentro en Medellín</span><span>✦</span><span>Lo lento · Lo análogo · Lo que está en las tripas</span><span>✦</span>
+    <span>Escribir es mirar mejor</span><span>✦</span><span>2 sesiones virtuales al mes</span><span>✦</span><span>1 encuentro en Medellín</span><span>✦</span><span>Lo lento · Lo análogo · Lo que está en las tripas</span><span>✦</span>
+  </div>
+</div>
+
+<section class="manif" id="club">
+  <div class="wrap">
+    <div class="txt rev">
+      <div class="kicker caps">El club</div>
+      <blockquote>“Ya van dos años apostándole a lo que es lento, a lo que es análogo, <em>a lo que está en las tripas y no en las máquinas.</em>”</blockquote>
+      <div class="firma"><span class="mano">Juliana</span><span>Fundadora de La Cándida · guía de Las Mironas</span></div>
+      <p>Las Mironas es un grupo pequeño de personas que escriben para sostenerse. No hace falta ser escritora ni haber publicado nada: hace falta ganas de mirar el mundo con atención y de dejar que las palabras suenen como suenan, sin domesticarlas.</p>
+    </div>
+    <figure class="rev"><img src="img/escribiendo.jpg" alt="Mirona escribiendo a mano con una vela encendida sobre la mesa" loading="lazy"></figure>
+  </div>
+</section>
+
+<section class="formato" id="formato">
+  <div class="wrap">
+    <div class="f-head rev">
+      <div>
+        <div class="kicker caps">Cómo funciona</div>
+        <h2>Cada mes, tres citas <em>con la escritura</em></h2>
+      </div>
+      <p>Una suscripción mensual que se renueva sola. Cada ciclo trae una consigna nueva, lecturas para acompañarla y tres momentos para escribir en compañía.</p>
+    </div>
+    <div class="tarjetas">
+      <article class="tarjeta rev">
+        <div class="num">01</div>
+        <h3>Sesión virtual de consigna</h3>
+        <p>Abrimos el mes con una lectura, una conversación y la consigna de escritura. Escribimos juntas en vivo y nos llevamos el ejercicio para la casa.</p>
+        <div class="meta"><span class="chip">En línea</span><span class="chip">2 horas</span><span class="chip">Martes 7:00 p. m.</span></div>
+      </article>
+      <article class="tarjeta rev">
+        <div class="num">02</div>
+        <h3>Sesión virtual de lectura</h3>
+        <p>Leemos en voz alta lo que escribimos y lo conversamos con cuidado. Devoluciones honestas, sin castrar el instinto, para que cada texto crezca a su manera.</p>
+        <div class="meta"><span class="chip">En línea</span><span class="chip">2 horas</span><span class="chip">Martes 7:00 p. m.</span></div>
+      </article>
+      <article class="tarjeta presencial rev">
+        <div class="num">01<small>presencial</small></div>
+        <h3>Encuentro en Medellín</h3>
+        <p>Una mañana entera para escribir con las manos, lejos de la pantalla: café, velas, papel y un lugar especial en la ciudad. El momento donde el club se vuelve cuerpo.</p>
+        <div class="meta"><span class="chip">Medellín</span><span class="chip">4 horas</span><span class="chip">Sábado 9:30 a. m.</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="cal" id="calendario">
+  <div class="wrap">
+    <div class="txt rev">
+      <div class="kicker caps">Calendario</div>
+      <h2>Las fechas <em>de cada ciclo</em></h2>
+      <p>Las fechas se publican con anticipación para que puedas organizar tu mes. Si no alcanzas a llegar a una sesión virtual, puedes enviar tu texto y recibir devolución por escrito.</p>
+    </div>
+    <div class="rev">
+      <div class="meses" role="group" aria-label="Elegir mes">
+        <button aria-pressed="true" data-mes="nov">Noviembre</button>
+        <button aria-pressed="false" data-mes="dic">Diciembre</button>
+        <button aria-pressed="false" data-mes="ene">Enero 2027</button>
+      </div>
+      <div class="agenda" id="agenda"></div>
+    </div>
+  </div>
+</section>
+
+<section class="incluye">
+  <div class="wrap">
+    <div class="rev">
+      <div class="kicker caps">Qué incluye</div>
+      <h2>Todo lo que pasa <em>dentro del club</em></h2>
+      <figure><img src="img/mesa.jpg" alt="Mesa larga con Mironas escribiendo durante un encuentro presencial" loading="lazy"></figure>
+    </div>
+    <ul class="lista rev">
+      <li><span>i.</span><div><b>Dos sesiones virtuales en vivo</b><p>Consigna, escritura acompañada y lectura en voz alta.</p></div></li>
+      <li><span>ii.</span><div><b>Un encuentro presencial en Medellín</b><p>Una mañana para escribir en un lugar elegido para eso. Los materiales van por cuenta del club.</p></div></li>
+      <li><span>iii.</span><div><b>Consigna y lecturas del mes</b><p>Un cuadernillo digital con la consigna, los textos de referencia y preguntas para seguir escribiendo.</p></div></li>
+      <li><span>iv.</span><div><b>Devoluciones sobre tus textos</b><p>Comentarios de Juliana sobre lo que escribes, en sesión o por escrito.</p></div></li>
+      <li><span>v.</span><div><b>El grupo de Las Mironas</b><p>Un espacio para compartir lecturas, avances y lo que se va moviendo entre sesión y sesión.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="galeria" aria-label="Momentos del club">
+  <div class="fila">
+    <img src="img/libreta.jpg" alt="Mirona escribe en su libreta" loading="lazy">
+    <img src="img/sesion.jpg" alt="Sesión del club de escritura" loading="lazy">
+    <img src="img/jardin.jpg" alt="Escritura en un encuentro rodeado de naturaleza" loading="lazy">
+    <img src="img/vela.jpg" alt="Cuaderno abierto con lápiz y vela" loading="lazy">
+    <img src="img/mano.jpg" alt="Mano escribiendo sobre una consigna" loading="lazy">
+  </div>
+</section>
+
+<section class="guia">
+  <div class="wrap">
+    <figure class="rev"><img src="img/vela.jpg" alt="Cuaderno abierto con una vela azul encendida" loading="lazy"></figure>
+    <div class="rev">
+      <div class="kicker caps">Quién guía</div>
+      <h2>La Cándida, <em>estudio de escritura</em></h2>
+      <p>La Cándida nació con los manifiestos: textos que dicen en voz alta lo que una marca, una persona o un momento quieren ser. Desde ahí, Juliana diseña talleres de escritura, acompaña proyectos y guía Las Mironas, el club donde la escritura es un acto de supervivencia y no una imposición intelectual.</p>
+      <div class="servicios">
+        <span class="chip">Manifiestos</span><span class="chip">Talleres de escritura</span><span class="chip">Asesoría en proyectos</span><span class="chip">Club Las Mironas</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="precio" id="precio">
+  <div class="wrap">
+    <div class="txt rev">
+      <div class="kicker caps">Suscripción</div>
+      <h2>Un solo plan, <em>mes a mes</em></h2>
+      <p>Te suscribes una vez y el pago se renueva automáticamente cada mes con tu tarjeta. Sin permanencia: puedes pausar o cancelar desde tu cuenta antes de la fecha del próximo cobro.</p>
+      <span class="mano">si quieres ser una Mirona, este es tu lugar ✦</span>
+    </div>
+    <div class="plan rev">
+      <div class="sello">Ciclo de noviembre</div>
+      <div class="caps" style="color:var(--indigo)">Las Mironas · mensual</div>
+      <div class="monto"><b>$200.000</b><span>COP / mes</span></div>
+      <div class="nota">Cobro automático mensual · cancelas cuando quieras</div>
+      <ul>
+        <li>2 sesiones virtuales en vivo</li>
+        <li>1 encuentro presencial en Medellín</li>
+        <li>Consigna y lecturas del mes</li>
+        <li>Devoluciones sobre tus textos</li>
+        <li>Acceso al grupo de Las Mironas</li>
+      </ul>
+      <button class="btn btn-i" data-abrir>Quiero ser Mirona</button>
+      <div class="seguro"><span>🔒 Pago seguro</span><span>Tarjeta · PSE · Nequi</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="rev">
+      <div class="kicker caps">Preguntas</div>
+      <h2>Antes de <em>entrar</em></h2>
+    </div>
+    <div class="rev">
+      <details open><summary>¿Necesito experiencia escribiendo?</summary><p>No. El club es para quien tenga ganas de escribir, haya escrito antes o no. Lo único que pedimos es presencia y disposición para mirar.</p></details>
+      <details><summary>¿Cómo funciona el cobro recurrente?</summary><p>El primer cobro se hace el día que te suscribes. Desde ahí, se renueva automáticamente el mismo día de cada mes por $200.000. Te llega un recordatorio por correo tres días antes de cada cobro.</p></details>
+      <details><summary>¿Puedo cancelar o pausar?</summary><p>Sí, cuando quieras y sin penalidad, desde “Mi suscripción”. Si cancelas, conservas el acceso hasta el final del ciclo que ya pagaste.</p></details>
+      <details><summary>¿Y si no vivo en Medellín?</summary><p>Puedes ser Mirona desde cualquier lugar: las dos sesiones virtuales son el corazón del club. El encuentro presencial es en Medellín y es opcional para quienes estén lejos.</p></details>
+      <details><summary>¿Qué pasa si me pierdo una sesión?</summary><p>Recibes la consigna y las lecturas igual, y puedes enviar tu texto para recibir devolución por escrito.</p></details>
+      <details><summary>¿Dónde es el encuentro presencial?</summary><p>En un lugar de Medellín elegido para cada ciclo. Te enviamos la dirección exacta una semana antes por correo y por el grupo.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="cierre grano">
+  <div class="wrap">
+    <div class="caps" style="color:var(--limon)">Club de escritura</div>
+    <div class="titulo" style="margin-top:18px">SOY UNA<br>MIRONA</div>
+    <p>Para inventar el mundo cuando hace falta. Para escribir lento, en compañía, una vez y otra vez cada mes.</p>
+    <button class="btn btn-l" data-abrir>Suscribirme · $200.000 / mes</button>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="logo">la <b>cāndida</b></span>
+    <span>Estudio de escritura · Medellín, Colombia</span>
+    <span><a href="https://www.instagram.com/lacandida.co/" target="_blank" rel="noopener">@lacandida.co</a> · <a href="https://lacandida.co" target="_blank" rel="noopener">lacandida.co</a></span>
+  </div>
+</footer>
+
+<div class="fija" id="fija">
+  <div><b>$200.000</b><small>al mes · cancelas cuando quieras</small></div>
+  <button class="btn btn-l btn-sm" data-abrir>Quiero ser Mirona</button>
+</div>
+
+<!-- checkout -->
+<div class="modal" id="checkout" role="dialog" aria-modal="true" aria-labelledby="coTitulo">
+  <div class="caja">
+    <aside class="resumen grano">
+      <div class="caps">Tu suscripción</div>
+      <div class="titulo">LAS<br>MIRONAS</div>
+      <div class="it">Club de escritura</div>
+      <dl>
+        <div><dt>Plan</dt><dd>Mensual recurrente</dd></div>
+        <div><dt>Primer ciclo</dt><dd id="rCiclo">Noviembre 2026</dd></div>
+        <div><dt>Incluye</dt><dd>2 virtuales + 1 presencial</dd></div>
+        <div><dt>Próximo cobro</dt><dd id="rProx">—</dd></div>
+      </dl>
+      <div class="total"><b>$200.000</b><span>COP hoy · luego $200.000 cada mes</span></div>
+    </aside>
+    <div class="form">
+      <button class="cerrar" data-cerrar aria-label="Cerrar">×</button>
+      <div class="pasos" id="pasos">
+        <span class="on" data-p="1"><i>1</i><b>Tus datos</b></span><span class="sep"></span>
+        <span data-p="2"><i>2</i><b>Pago</b></span><span class="sep"></span>
+        <span data-p="3"><i>3</i><b>Listo</b></span>
+      </div>
+
+      <form class="paso on" id="paso1" novalidate>
+        <h3 id="coTitulo">Hola, futura Mirona</h3>
+        <p class="sub">Con estos datos te enviamos las fechas, el enlace de las sesiones y la invitación al grupo.</p>
+        <div class="campo"><label for="nombre">Nombre completo</label><input id="nombre" autocomplete="name" required></div>
+        <div class="campo"><label for="correo">Correo electrónico</label><input id="correo" type="email" autocomplete="email" required></div>
+        <div class="dos">
+          <div class="campo"><label for="cel">Celular (WhatsApp)</label><input id="cel" type="tel" inputmode="tel" autocomplete="tel" placeholder="300 000 0000" required></div>
+          <div class="campo"><label for="ciudad">Ciudad</label><select id="ciudad"><option>Medellín</option><option>Envigado</option><option>Sabaneta</option><option>Itagüí</option><option>Rionegro</option><option>Bogotá</option><option>Otra ciudad</option><option>Fuera de Colombia</option></select></div>
+        </div>
+        <div class="campo"><label for="porque">¿Qué te trae al club? <span style="font-weight:400;color:var(--tinta-2)">(opcional)</span></label><input id="porque" placeholder="Quiero volver a escribir…"></div>
+        <button class="btn btn-i" type="submit">Continuar al pago</button>
+      </form>
+
+      <form class="paso" id="paso2" novalidate>
+        <h3>Pago recurrente</h3>
+        <p class="sub">Se cobran <b>$200.000</b> hoy y luego el mismo día de cada mes. Cancelas cuando quieras.</p>
+        <div class="metodos" role="group" aria-label="Método de pago">
+          <button type="button" aria-pressed="true" data-metodo="tarjeta">Tarjeta</button>
+          <button type="button" aria-pressed="false" data-metodo="pse">PSE</button>
+          <button type="button" aria-pressed="false" data-metodo="nequi">Nequi</button>
+        </div>
+        <div id="mTarjeta">
+          <div class="campo"><label for="tnum">Número de tarjeta</label><input id="tnum" inputmode="numeric" autocomplete="off" placeholder="4242 4242 4242 4242" maxlength="19"></div>
+          <div class="dos">
+            <div class="campo"><label for="tfec">Vencimiento</label><input id="tfec" inputmode="numeric" autocomplete="off" placeholder="MM/AA" maxlength="5"></div>
+            <div class="campo"><label for="tcvc">CVC</label><input id="tcvc" inputmode="numeric" autocomplete="off" placeholder="123" maxlength="4"></div>
+          </div>
+        </div>
+        <div id="mOtro" style="display:none">
+          <div class="campo"><label for="banco" id="lblOtro">Banco</label><select id="banco"><option>Bancolombia</option><option>Davivienda</option><option>Banco de Bogotá</option><option>BBVA</option><option>Otro banco</option></select></div>
+          <p class="sub" id="txtOtro" style="margin-top:-4px">Autorizas el débito automático mensual desde tu banco.</p>
+        </div>
+        <label class="check"><input type="checkbox" id="acepto" checked> Autorizo el cobro automático mensual de $200.000 hasta que cancele la suscripción.</label>
+        <button class="btn btn-i" type="submit">Pagar $200.000 y unirme</button>
+        <p class="aviso">Demostración: usa cualquier dato, no se procesa ningún pago.</p>
+        <button type="button" class="aviso" id="volver" style="display:block;margin:10px auto 0;text-decoration:underline">← Volver a mis datos</button>
+      </form>
+
+      <div class="paso" id="pasoCarga"><div class="cargando"><div class="spin"></div><h3>Procesando tu pago…</h3><p class="sub">Un momento, estamos confirmando con tu banco.</p></div></div>
+
+      <div class="paso listo" id="paso3">
+        <div class="mano">bienvenida, Mirona ✦</div>
+        <h3 style="margin-top:8px">Ya eres parte del club</h3>
+        <p class="sub" id="txtListo">Te enviamos la confirmación a tu correo.</p>
+        <div class="box">
+          <div><span>Primera sesión</span><b id="lPrimera">—</b></div>
+          <div><span>Encuentro presencial</span><b id="lPres">—</b></div>
+          <div><span>Pago de hoy</span><b>$200.000</b></div>
+          <div><span>Próximo cobro</span><b id="lProx">—</b></div>
+          <div><span>Referencia</span><b id="lRef">—</b></div>
+        </div>
+        <div class="acciones">
+          <a class="btn btn-o" id="lCal" href="#" download="las-mironas.ics">Agregar al calendario</a>
+          <button class="btn btn-i" id="lPanel">Ver mi suscripción</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- panel suscripción -->
+<div class="modal panel" id="panel" role="dialog" aria-modal="true" aria-labelledby="pTitulo">
+  <div class="caja">
+    <div class="form">
+      <button class="cerrar" data-cerrar aria-label="Cerrar">×</button>
+      <div class="caps" style="color:var(--indigo)">Mi suscripción</div>
+      <h3 id="pTitulo" style="margin:10px 0 12px">Las Mironas · mensual</h3>
+      <span class="estado" id="pEstado"><i></i>Activa</span>
+      <div class="listo"><div class="box">
+        <div><span>Mirona</span><b id="pNombre">—</b></div>
+        <div><span>Método de pago</span><b id="pMetodo">—</b></div>
+        <div><span id="pProxLbl">Próximo cobro</span><b id="pProx">—</b></div>
+        <div><span>Valor</span><b>$200.000 / mes</b></div>
+      </div></div>
+      <div class="caps" style="font-size:11px;margin-top:6px">Historial de cobros</div>
+      <div class="cobros" id="pCobros"></div>
+      <div class="listo" style="margin-top:22px"><div class="acciones">
+        <button class="btn btn-o" id="pPausa">Pausar un mes</button>
+        <button class="btn btn-o" id="pCancel" style="color:#8E2B1E">Cancelar suscripción</button>
+      </div></div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const MESES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+const fmt=d=>`${d.getDate()} de ${MESES[d.getMonth()]} de ${d.getFullYear()}`;
+
+/* calendario */
+const AGENDA={
+  nov:[
+    {d:10,m:'Nov',dow:'Mar',t:'Sesión virtual · consigna',p:'7:00 – 9:00 p. m. · En línea',k:'v',f:'2026-11-10T19:00'},
+    {d:21,m:'Nov',dow:'Sáb',t:'Encuentro presencial',p:'9:30 a. m. – 1:30 p. m. · Medellín',k:'p',f:'2026-11-21T09:30'},
+    {d:24,m:'Nov',dow:'Mar',t:'Sesión virtual · lectura',p:'7:00 – 9:00 p. m. · En línea',k:'v',f:'2026-11-24T19:00'}],
+  dic:[
+    {d:1,m:'Dic',dow:'Mar',t:'Sesión virtual · consigna',p:'7:00 – 9:00 p. m. · En línea',k:'v'},
+    {d:12,m:'Dic',dow:'Sáb',t:'Encuentro presencial de fin de año',p:'9:30 a. m. – 1:30 p. m. · Medellín',k:'p'},
+    {d:15,m:'Dic',dow:'Mar',t:'Sesión virtual · lectura',p:'7:00 – 9:00 p. m. · En línea',k:'v'}],
+  ene:[
+    {d:12,m:'Ene',dow:'Mar',t:'Sesión virtual · consigna',p:'7:00 – 9:00 p. m. · En línea',k:'v'},
+    {d:23,m:'Ene',dow:'Sáb',t:'Encuentro presencial',p:'9:30 a. m. – 1:30 p. m. · Medellín',k:'p'},
+    {d:26,m:'Ene',dow:'Mar',t:'Sesión virtual · lectura',p:'7:00 – 9:00 p. m. · En línea',k:'v'}]
+};
+function pintaAgenda(mes){
+  $('#agenda').innerHTML=AGENDA[mes].map(e=>`<div class="evento"><div class="dia"><b>${e.d}</b><span>${e.dow} · ${e.m}</span></div><div><h4>${e.t}</h4><p>${e.p}</p></div><span class="tag ${e.k}">${e.k==='v'?'Virtual':'Presencial'}</span></div>`).join('');
+}
+$$('.meses button').forEach(b=>b.onclick=()=>{$$('.meses button').forEach(x=>x.setAttribute('aria-pressed',x===b));pintaAgenda(b.dataset.mes)});
+pintaAgenda('nov');
+
+/* cupos (simulado) */
+const TOTAL=14;
+let ocupados=10;
+try{ if(localStorage.getItem('mirona')) ocupados=11 }catch(e){}
+function pintaCupos(){
+  const q=TOTAL-ocupados;
+  $('#barraCupos').style.width=(ocupados/TOTAL*100)+'%';
+  $('#txtCupos').innerHTML=`<b>Quedan ${q} cupos</b> de ${TOTAL} para el ciclo de noviembre`;
+}
+setTimeout(pintaCupos,400);
+
+/* fechas de cobro */
+const hoy=new Date();
+const prox=new Date(hoy.getFullYear(),hoy.getMonth()+1,Math.min(hoy.getDate(),28));
+$('#rProx').textContent=fmt(prox);
+
+/* modales */
+let ultimoFoco=null;
+function abrir(id){ultimoFoco=document.activeElement;$(id).classList.add('on');document.body.style.overflow='hidden';setTimeout(()=>$(id).querySelector('input,button')?.focus(),50)}
+function cerrar(){$$('.modal').forEach(m=>m.classList.remove('on'));document.body.style.overflow='';ultimoFoco?.focus()}
+$$('[data-abrir]').forEach(b=>b.onclick=()=>{ if(sub && sub.estado!=='cancelada'){abrirPanel();return} irPaso('paso1');abrir('#checkout')});
+$$('[data-cerrar]').forEach(b=>b.onclick=cerrar);
+$$('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)cerrar()}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')cerrar()});
+
+function irPaso(id){
+  $$('#checkout .paso').forEach(p=>p.classList.toggle('on',p.id===id));
+  const n={paso1:1,paso2:2,pasoCarga:2,paso3:3}[id];
+  $$('#pasos span[data-p]').forEach(s=>{const p=+s.dataset.p;s.classList.toggle('on',p===n);s.classList.toggle('ok',p<n)});
+}
+
+/* paso 1 */
+const valida=(el,ok)=>{el.closest('.campo').classList.toggle('err',!ok);return ok};
+$('#paso1').onsubmit=e=>{
+  e.preventDefault();
+  const ok=[valida($('#nombre'),$('#nombre').value.trim().length>2),
+            valida($('#correo'),/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test($('#correo').value)),
+            valida($('#cel'),$('#cel').value.replace(/\D/g,'').length>=7)].every(Boolean);
+  if(!ok){toast('Revisa los campos marcados');return}
+  irPaso('paso2');
+};
+
+/* paso 2 */
+let metodo='tarjeta';
+$$('.metodos button').forEach(b=>b.onclick=()=>{
+  metodo=b.dataset.metodo;$$('.metodos button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  $('#mTarjeta').style.display=metodo==='tarjeta'?'':'none';
+  $('#mOtro').style.display=metodo==='tarjeta'?'none':'';
+  if(metodo==='nequi'){$('#lblOtro').textContent='Cuenta Nequi';$('#banco').innerHTML='<option>Débito automático desde Nequi</option>';$('#txtOtro').textContent='Recibirás una notificación en tu app de Nequi para aprobar el débito mensual.'}
+  if(metodo==='pse'){$('#lblOtro').textContent='Banco';$('#banco').innerHTML='<option>Bancolombia</option><option>Davivienda</option><option>Banco de Bogotá</option><option>BBVA</option><option>Otro banco</option>';$('#txtOtro').textContent='Autorizas el débito automático mensual desde tu banco.'}
+});
+$('#tnum').oninput=e=>{e.target.value=e.target.value.replace(/\D/g,'').slice(0,16).replace(/(.{4})/g,'$1 ').trim()};
+$('#tfec').oninput=e=>{let v=e.target.value.replace(/\D/g,'').slice(0,4);if(v.length>2)v=v.slice(0,2)+'/'+v.slice(2);e.target.value=v};
+$('#tcvc').oninput=e=>{e.target.value=e.target.value.replace(/\D/g,'').slice(0,4)};
+$('#volver').onclick=()=>irPaso('paso1');
+$('#paso2').onsubmit=e=>{
+  e.preventDefault();
+  if(metodo==='tarjeta'){
+    const ok=[valida($('#tnum'),$('#tnum').value.replace(/\s/g,'').length>=15),
+              valida($('#tfec'),/^\d\d\/\d\d$/.test($('#tfec').value)),
+              valida($('#tcvc'),$('#tcvc').value.length>=3)].every(Boolean);
+    if(!ok){toast('Revisa los datos de la tarjeta');return}
+  }
+  if(!$('#acepto').checked){toast('Debes autorizar el cobro mensual');return}
+  irPaso('pasoCarga');
+  setTimeout(confirmar,2200);
+};
+
+/* suscripción simulada */
+let sub=null;
+try{sub=JSON.parse(localStorage.getItem('mirona'))}catch(e){}
+function guardar(){try{localStorage.setItem('mirona',JSON.stringify(sub))}catch(e){}}
+function confirmar(){
+  const nombre=$('#nombre').value.trim();
+  const ult=$('#tnum').value.replace(/\s/g,'').slice(-4)||'4242';
+  sub={nombre,correo:$('#correo').value.trim(),
+       metodo:metodo==='tarjeta'?`Tarjeta •••• ${ult}`:metodo==='pse'?`PSE · ${$('#banco').value}`:'Nequi',
+       inicio:hoy.toISOString(),prox:prox.toISOString(),estado:'activa',
+       ref:'MIR-'+Math.random().toString(36).slice(2,8).toUpperCase()};
+  guardar();
+  const pn=nombre.split(' ')[0];
+  $('#txtListo').innerHTML=`${pn}, te enviamos la confirmación a <b>${sub.correo}</b> y en las próximas horas te escribimos por WhatsApp con la invitación al grupo.`;
+  $('#lPrimera').textContent='Mar 10 nov · 7:00 p. m.';
+  $('#lPres').textContent='Sáb 21 nov · Medellín';
+  $('#lProx').textContent=fmt(prox);
+  $('#lRef').textContent=sub.ref;
+  $('#lCal').href=icsURL();
+  irPaso('paso3');
+  ocupados=11;pintaCupos();
+  pintaCuenta();
+}
+function icsURL(){
+  const z=s=>s.replace(/[-:]/g,'')+'00';
+  const ev=AGENDA.nov.map(e=>{const fin=new Date(new Date(e.f).getTime()+(e.k==='p'?4:2)*36e5);const pad=n=>String(n).padStart(2,'0');
+    const f2=`${fin.getFullYear()}${pad(fin.getMonth()+1)}${pad(fin.getDate())}T${pad(fin.getHours())}${pad(fin.getMinutes())}00`;
+    return `BEGIN:VEVENT\r\nUID:${e.f}@lasmironas\r\nDTSTAMP:20261023T000000Z\r\nDTSTART;TZID=America/Bogota:${z(e.f)}\r\nDTEND;TZID=America/Bogota:${f2}\r\nSUMMARY:Las Mironas · ${e.t}\r\nLOCATION:${e.k==='p'?'Medellín':'En línea'}\r\nEND:VEVENT`}).join('\r\n');
+  return 'data:text/calendar;charset=utf-8,'+encodeURIComponent(`BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//La Candida//Las Mironas//ES\r\n${ev}\r\nEND:VCALENDAR`);
+}
+function pintaCuenta(){
+  const on=sub&&sub.estado!=='cancelada';
+  $('#btnCuenta').style.display=on?'inline-flex':'';
+  $('#btnCuenta').classList.toggle('on',on);
+}
+function abrirPanel(){
+  if(!sub)return;
+  $('#pNombre').textContent=sub.nombre;
+  $('#pMetodo').textContent=sub.metodo;
+  const e=$('#pEstado');
+  e.className='estado'+(sub.estado==='pausada'?' pausa':sub.estado==='cancelada'?' cancel':'');
+  e.innerHTML='<i></i>'+{activa:'Activa',pausada:'Pausada un mes',cancelada:'Cancelada'}[sub.estado];
+  $('#pProxLbl').textContent=sub.estado==='cancelada'?'Acceso hasta':'Próximo cobro';
+  $('#pProx').textContent=fmt(new Date(sub.prox));
+  $('#pCobros').innerHTML=`<div><span>${fmt(new Date(sub.inicio))} · ${sub.ref}</span><span>$200.000 ✓</span></div>`;
+  $('#pPausa').textContent=sub.estado==='pausada'?'Reanudar':'Pausar un mes';
+  $('#pPausa').disabled=$('#pCancel').disabled=sub.estado==='cancelada';
+  $('#pCancel').textContent=sub.estado==='cancelada'?'Suscripción cancelada':'Cancelar suscripción';
+  cerrar();abrir('#panel');
+}
+$('#lPanel').onclick=abrirPanel;
+$('#btnCuenta').onclick=abrirPanel;
+$('#pPausa').onclick=()=>{
+  const p=new Date(sub.prox);
+  if(sub.estado==='pausada'){sub.estado='activa';p.setMonth(p.getMonth()-1);toast('Tu suscripción está activa de nuevo')}
+  else{sub.estado='pausada';p.setMonth(p.getMonth()+1);toast('Listo: no te cobramos el próximo mes')}
+  sub.prox=p.toISOString();guardar();abrirPanel();
+};
+$('#pCancel').onclick=()=>{sub.estado='cancelada';guardar();pintaCuenta();abrirPanel();toast('Cancelada. Sigues siendo Mirona hasta el final de tu ciclo')};
+pintaCuenta();
+
+/* toast */
+let tt;function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),3000)}
+
+/* barra fija + revelado */
+const hero=$('.hero');
+new IntersectionObserver(([e])=>$('#fija').classList.toggle('on',!e.isIntersecting)).observe(hero);
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+$$('.rev').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
